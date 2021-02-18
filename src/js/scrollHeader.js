@@ -1,6 +1,7 @@
 const scrollHeader = () => {
   const header = document.querySelector('.header');
-  
+  const list = document.querySelector('.header__nav-list');
+
   let coordinates = [];
 
   window.addEventListener('scroll', () => {
@@ -17,7 +18,12 @@ const scrollHeader = () => {
   function checkCoordinates() {
     for (let i = 0; i < coordinates.length; i++) {
       for (let j = i + 1; j < coordinates.length; j++) {
-        coordinates[i] < coordinates[j] ? header.classList.add('hide') : header.classList.remove('hide');
+        if (coordinates[i] < coordinates[j]) {
+          header.classList.add('hide-top');
+          list.classList.remove('show-down');
+        } else {
+          header.classList.remove('hide-top');
+        }
       }
     }
   }

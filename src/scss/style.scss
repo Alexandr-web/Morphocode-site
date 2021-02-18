@@ -14,6 +14,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &-btn {
+      display: none;
+    }
     &-list {
       display: flex;
       align-items: center;
@@ -260,7 +263,12 @@
   }
 }
 
-.hide {
-  opacity: 0;
-  visibility: hidden;
+@import './_media';
+
+.hide-top {
+  top: -100px;
+}
+
+.show-down {
+  top: 70px;
 }
